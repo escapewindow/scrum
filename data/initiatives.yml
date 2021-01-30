@@ -10,59 +10,152 @@
 
 ktlo:
   title: Keep the Lights On
-  themes: [maintenance, operations]
+  themes: [workflow, operations]
   description: >-
     Ensure all RelEng systems are working in order to keep our products
     pipeline running.
 
-automation-needs:
-  title: Automation Needs
-  themes: [maintenance]
+geckoview-android-components-shipit:
+  title: Integrate Geckoview and Android-Components in the Fenix pipeline on Shipit
+  themes: [user-growth, workflow]
   description: >-
-    Keep Firefox CI OS+hardware/cloud environments relevant and investigate
-    ways to reduce pain points.
-
-fenix-shipit:
-  title: Initiate and drive Fenix release automation through the Shipit service
-  themes: [user-growth, maintenance]
-  description: >-
-    Support Fenix in Shipit, reducing human error and time spent shepherding
-    Fenix releases.
-
-apple-silicon-support:
-  title: Apple Silicon Support
-  themes: [user-growth, maintenance]
-  description: >-
-    Determine what is needed to support Apple Silicon build signing and
-    testing, and the timeframe it’s needed in.
-
-test-scheduling:
-  title: Test Scheduling improvements
-  themes: [cost-reduction, maintenance]
-  description: >-
-    Use smarter scheduling algorithms to reduce the number of tasks we run in
-    CI and give developers greater confidence in their try pushes.
+    Automate GeckoView and Android-Components releases like Fenix, reducing
+    cross-team interactions and friction.
 
 fenix-v3-signatures:
   title: Implement Android v3 signatures and sign Fenix with them
-  themes: [maintenance]
+  themes: [workflow, security]
   description: >-
     We should sign Fenix with both v1 and v3 signatures so that we support
     legacy versions of Android while covering ourselves in case of a key
     leakage.
 
-secrets-rotation:
-  title: Rotate releng secrets and share with the team
-  themes: [maintenance, operations]
+system-addons-balrog:
+  title: Automate shipping system addons through Balrog
+  themes: [workflow, security]
   description: >-
-    Rotate releng secrets.
+    Document, automate, and run periodic tests to make sure we are ready to
+    ship system addons to all versions of Firefox through automation.
 
-geckoview-android-components-shipit:
-  title: Integrate Geckoview and Android-Components in the Fenix pipeline on Shipit
-  themes: [user-growth, maintenance]
+formalize-addons-pipeline:
+  title: Work with the Addons team to formalize the Addons Pipeline
+  themes: [workflow]
   description: >-
-    Automate GeckoView and Android-Components releases like Fenix, reducing
-    cross-team interactions and friction.
+    Clarify and streamline the rules and process of the addons pipeline.
+
+automate-mac-signer-maintenance:
+  title: Automate Mac Signer Maintenance
+  themes: [operations, security]
+  description: >-
+    End goal of rolling out changes to the mac signers via ronin-puppet commit,
+    reducing ssh and manual maintenance to zero.
+
+apple-silicon-support:
+  title: Apple Silicon Support
+  themes: [user-growth, workflow]
+  description: >-
+    Determine what is needed to support Apple Silicon build signing and
+    testing, and the timeframe it’s needed in.
+
+modernizing-test-platforms:
+  title: Modernizing OS/Hardware for CI tests
+  themes: [operations, workflow]
+  description: >-
+    Keep Firefox CI OS+hardware/cloud environments relevant and investigate
+    ways to reduce pain points.
+
+push-health-ux-rework:
+  title: Push Health UX Rework
+  themes: [workflow]
+  description: >-
+    Give developers a simple view of what failures seen in CI need their
+    attention.
+
+firefox-nightly-shipit:
+  title: Drive desktop Firefox Nightly automation through shipit
+  themes: [workflow]
+  description: >-
+    Unify nightly and release automation in Gecko.
+
+speed-up-update-verify:
+  title: Speed up update verify
+  themes: [cost-reduction, workflow]
+  description: >-
+    Speed up update verify.
+
+developer-productivity:
+  title: Developer Productivity
+  themes: [workflow]
+  description: >-
+    Improve developer productivity by addressing bugs developers file/mention
+    and being proactive on workflows
+
+activedata-eol:
+  title: Productionize or EOL ActiveData
+  themes: [operations]
+  description: >-
+    Productionize or EOL ActiveData.
+
+treeherder-login-experience:
+  title: "Treeherder: Improve login experience"
+  themes: [workflow]
+  description: >-
+    Minimize papercuts in Treeherder by increasing login TTL.
+
+treeherder-maintenance:
+  title: "Treeherder: Maintenance/Backlog"
+  themes: [workflow]
+  description: >-
+    Treeherder maintenance and backlog
+
+python-3-migration:
+  title: Finish Python 3 migration
+  themes: [operations, security]
+  description: >-
+    Python 2 has been EOLed since the end of 2019. Pip dropped support for
+    Python 2.7 in Jan 2021.
+
+automate-firefox-update-tests:
+  title: Automate QA's Firefox Update Tests
+  themes: [cost-reduction, workflow]
+  description: >-
+    QA runs update tests against a matrix of Firefox versions. They want us to
+    run these tests in automation.
+
+password-rotations:
+  title: Password Rotations and Sharing
+  themes: [security]
+  description: >-
+    Rotate secrets and populate the new secrets store.
+
+releng-for-mozilla-proposal:
+  title: Develop Releng for Mozilla Proposal
+  themes: [workflow, security, user-growth]
+  description: >-
+    Create a proposal to also help non-Gecko teams at Mozilla with their
+    release pipelines.
+
+firefox-snap-default:
+  title: Make Firefox Snap the default format on Ubuntu
+  themes: [workflow, security, user-growth]
+  description: >-
+    Make Snap the default format on Ubuntu. This will make a Mozilla build
+    the default, rather than a distribution rebuild. There may be contracts
+    involved.
+
+automate-mergeduty:
+  title: Fully automate mergeduty
+  themes: [workflow]
+  description: >-
+    Fully automate the rest of mergeduty.
+
+
+test-scheduling:
+  title: Test Scheduling improvements
+  themes: [cost-reduction, workflow]
+  description: >-
+    Use smarter scheduling algorithms to reduce the number of tasks we run in
+    CI and give developers greater confidence in their try pushes.
 
 task-efficiencies:
   title: Reduce wasted compute and idle time in our CI infrastructure
@@ -71,12 +164,6 @@ task-efficiencies:
     Reduce test frequencies, wasted time in tasks, and idle time in our CI
     infrastructure.
 
-activedata-maintenance:
-  title: ActiveData Maintenance
-  themes: [maintenance]
-  description: >-
-    Keep ActiveData running, until we find alternate solutions.
-
 right-size-instances:
   title: Right-size cloud instances
   themes: [cost-reduction]
@@ -84,53 +171,25 @@ right-size-instances:
     Create system to identify tasks running on oversized instances by
     collecting resource usage data into our data analytics platform (BigQuery)
 
-balrog-metadata:
-  title: Balrog Metadata Submission
-  themes: [maintenance, operations]
-  description: >-
-    Rework the Balrog admin interface to optimize how update metadata about
-    individual locales is submitted, to increase reliability and efficiency.
-
-push-health-ux-rework:
-  title: Push Health UX Rework
-  themes: [maintenance]
-  description: >-
-    Give developers a simple view of what failures seen in CI need their
-    attention.
-
 treeherder-sheriff-requests:
   title: Specific bug fixes and feature requests for sheriffs
-  themes: [maintenance]
+  themes: [workflow]
   description: >-
     Improving workflows for sheriffs make them more efficient and accurate.
     It also makes their lives easier.
 
-python-3-migration:
-  title: Finish Python 3 migration
-  themes: [maintenance]
-  description: >-
-    Python 2 has been EOLed since the end of 2019. Pip will drop support for
-    Python 2.7 in Jan 2021.
-
 push-health-mozci:
   title: Push Health MozCI integration
-  themes: [maintenance]
+  themes: [workflow]
   description: >-
     Improve Push Health regression detection accuracy by integrating MozCI
 
 test-distribution-optimization:
   title: Test distribution and scheduling optimizations
-  themes: [cost-reduction, maintenance]
+  themes: [cost-reduction, workflow]
   description: >-
     Reduce overhead related to getting test files onto the test workers; stop
     scheduling builds for test-only changes.
-
-developer-productivity:
-  title: Developer Productivity
-  themes: [maintenance]
-  description: >-
-    Improve developer productivity by addressing bugs developers file/mention
-    and being proactive on workflows
 
 archive-cleanup:
   title: archive.mozilla.org cleanup

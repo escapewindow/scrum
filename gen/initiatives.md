@@ -5,23 +5,32 @@ An _initiative_ is a collection of one or more milestones that, taken together, 
 The following are the current initiatives:
 
 * [Keep the Lights On](#ktlo)
-* [Automation Needs](#automation-needs)
-* [Initiate and drive Fenix release automation through the Shipit service](#fenix-shipit)
-* [Apple Silicon Support](#apple-silicon-support)
-* [Test Scheduling improvements](#test-scheduling)
-* [Implement Android v3 signatures and sign Fenix with them](#fenix-v3-signatures)
-* [Rotate releng secrets and share with the team](#secrets-rotation)
 * [Integrate Geckoview and Android-Components in the Fenix pipeline on Shipit](#geckoview-android-components-shipit)
-* [Reduce wasted compute and idle time in our CI infrastructure](#task-efficiencies)
-* [ActiveData Maintenance](#activedata-maintenance)
-* [Right-size cloud instances](#right-size-instances)
-* [Balrog Metadata Submission](#balrog-metadata)
+* [Implement Android v3 signatures and sign Fenix with them](#fenix-v3-signatures)
+* [Automate shipping system addons through Balrog](#system-addons-balrog)
+* [Work with the Addons team to formalize the Addons Pipeline](#formalize-addons-pipeline)
+* [Automate Mac Signer Maintenance](#automate-mac-signer-maintenance)
+* [Apple Silicon Support](#apple-silicon-support)
+* [Modernizing OS/Hardware for CI tests](#modernizing-test-platforms)
 * [Push Health UX Rework](#push-health-ux-rework)
-* [Specific bug fixes and feature requests for sheriffs](#treeherder-sheriff-requests)
+* [Drive desktop Firefox Nightly automation through shipit](#firefox-nightly-shipit)
+* [Speed up update verify](#speed-up-update-verify)
+* [Developer Productivity](#developer-productivity)
+* [Productionize or EOL ActiveData](#activedata-eol)
+* [Treeherder: Improve login experience](#treeherder-login-experience)
+* [Treeherder: Maintenance/Backlog](#treeherder-maintenance)
 * [Finish Python 3 migration](#python-3-migration)
+* [Automate QA's Firefox Update Tests](#automate-firefox-update-tests)
+* [Password Rotations and Sharing](#password-rotations)
+* [Develop Releng for Mozilla Proposal](#releng-for-mozilla-proposal)
+* [Make Firefox Snap the default format on Ubuntu](#firefox-snap-default)
+* [Fully automate mergeduty](#automate-mergeduty)
+* [Test Scheduling improvements](#test-scheduling)
+* [Reduce wasted compute and idle time in our CI infrastructure](#task-efficiencies)
+* [Right-size cloud instances](#right-size-instances)
+* [Specific bug fixes and feature requests for sheriffs](#treeherder-sheriff-requests)
 * [Push Health MozCI integration](#push-health-mozci)
 * [Test distribution and scheduling optimizations](#test-distribution-optimization)
-* [Developer Productivity](#developer-productivity)
 * [archive.mozilla.org cleanup](#archive-cleanup)
 * [Improve iOS build, release, and CI pipeline](#ios-needs)
 * [Support MozillaVPN Releases](#mozillavpn)
@@ -37,83 +46,7 @@ Ensure all RelEng systems are working in order to keep our products pipeline run
 
 *Addresses Themes:*
 
-* [Project Maintenance](./themes.md#maintenance)
-* [Team Operations](./themes.md#operations)
-
-
-## automation-needs
-*Automation Needs*
-
-Keep Firefox CI OS+hardware/cloud environments relevant and investigate ways to reduce pain points.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomation-needs)
-
-*Addresses Theme:*
-
-* [Project Maintenance](./themes.md#maintenance)
-
-
-## fenix-shipit
-*Initiate and drive Fenix release automation through the Shipit service*
-
-Support Fenix in Shipit, reducing human error and time spent shepherding Fenix releases.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afenix-shipit)
-
-*Addresses Themes:*
-
-* [Support user growth in Mozilla products](./themes.md#user-growth)
-* [Project Maintenance](./themes.md#maintenance)
-
-
-## apple-silicon-support
-*Apple Silicon Support*
-
-Determine what is needed to support Apple Silicon build signing and testing, and the timeframe it’s needed in.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aapple-silicon-support)
-
-*Addresses Themes:*
-
-* [Support user growth in Mozilla products](./themes.md#user-growth)
-* [Project Maintenance](./themes.md#maintenance)
-
-
-## test-scheduling
-*Test Scheduling improvements*
-
-Use smarter scheduling algorithms to reduce the number of tasks we run in CI and give developers greater confidence in their try pushes.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atest-scheduling)
-
-*Addresses Themes:*
-
-* [Support cost reduction](./themes.md#cost-reduction)
-* [Project Maintenance](./themes.md#maintenance)
-
-
-## fenix-v3-signatures
-*Implement Android v3 signatures and sign Fenix with them*
-
-We should sign Fenix with both v1 and v3 signatures so that we support legacy versions of Android while covering ourselves in case of a key leakage.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afenix-v3-signatures)
-
-*Addresses Theme:*
-
-* [Project Maintenance](./themes.md#maintenance)
-
-
-## secrets-rotation
-*Rotate releng secrets and share with the team*
-
-Rotate releng secrets.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Asecrets-rotation)
-
-*Addresses Themes:*
-
-* [Project Maintenance](./themes.md#maintenance)
+* [Workflow](./themes.md#workflow)
 * [Team Operations](./themes.md#operations)
 
 
@@ -127,7 +60,260 @@ Automate GeckoView and Android-Components releases like Fenix, reducing cross-te
 *Addresses Themes:*
 
 * [Support user growth in Mozilla products](./themes.md#user-growth)
-* [Project Maintenance](./themes.md#maintenance)
+* [Workflow](./themes.md#workflow)
+
+
+## fenix-v3-signatures
+*Implement Android v3 signatures and sign Fenix with them*
+
+We should sign Fenix with both v1 and v3 signatures so that we support legacy versions of Android while covering ourselves in case of a key leakage.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afenix-v3-signatures)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Security](./themes.md#security)
+
+
+## system-addons-balrog
+*Automate shipping system addons through Balrog*
+
+Document, automate, and run periodic tests to make sure we are ready to ship system addons to all versions of Firefox through automation.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Asystem-addons-balrog)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Security](./themes.md#security)
+
+
+## formalize-addons-pipeline
+*Work with the Addons team to formalize the Addons Pipeline*
+
+Clarify and streamline the rules and process of the addons pipeline.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aformalize-addons-pipeline)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## automate-mac-signer-maintenance
+*Automate Mac Signer Maintenance*
+
+End goal of rolling out changes to the mac signers via ronin-puppet commit, reducing ssh and manual maintenance to zero.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-mac-signer-maintenance)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Security](./themes.md#security)
+
+
+## apple-silicon-support
+*Apple Silicon Support*
+
+Determine what is needed to support Apple Silicon build signing and testing, and the timeframe it’s needed in.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aapple-silicon-support)
+
+*Addresses Themes:*
+
+* [Support user growth in Mozilla products](./themes.md#user-growth)
+* [Workflow](./themes.md#workflow)
+
+
+## modernizing-test-platforms
+*Modernizing OS/Hardware for CI tests*
+
+Keep Firefox CI OS+hardware/cloud environments relevant and investigate ways to reduce pain points.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amodernizing-test-platforms)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Workflow](./themes.md#workflow)
+
+
+## push-health-ux-rework
+*Push Health UX Rework*
+
+Give developers a simple view of what failures seen in CI need their attention.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apush-health-ux-rework)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## firefox-nightly-shipit
+*Drive desktop Firefox Nightly automation through shipit*
+
+Unify nightly and release automation in Gecko.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-nightly-shipit)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## speed-up-update-verify
+*Speed up update verify*
+
+Speed up update verify.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aspeed-up-update-verify)
+
+*Addresses Themes:*
+
+* [Support cost reduction](./themes.md#cost-reduction)
+* [Workflow](./themes.md#workflow)
+
+
+## developer-productivity
+*Developer Productivity*
+
+Improve developer productivity by addressing bugs developers file/mention and being proactive on workflows
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Adeveloper-productivity)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## activedata-eol
+*Productionize or EOL ActiveData*
+
+Productionize or EOL ActiveData.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aactivedata-eol)
+
+*Addresses Theme:*
+
+* [Team Operations](./themes.md#operations)
+
+
+## treeherder-login-experience
+*Treeherder: Improve login experience*
+
+Minimize papercuts in Treeherder by increasing login TTL.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-login-experience)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## treeherder-maintenance
+*Treeherder: Maintenance/Backlog*
+
+Treeherder maintenance and backlog
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-maintenance)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## python-3-migration
+*Finish Python 3 migration*
+
+Python 2 has been EOLed since the end of 2019. Pip dropped support for Python 2.7 in Jan 2021.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apython-3-migration)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Security](./themes.md#security)
+
+
+## automate-firefox-update-tests
+*Automate QA's Firefox Update Tests*
+
+QA runs update tests against a matrix of Firefox versions. They want us to run these tests in automation.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-firefox-update-tests)
+
+*Addresses Themes:*
+
+* [Support cost reduction](./themes.md#cost-reduction)
+* [Workflow](./themes.md#workflow)
+
+
+## password-rotations
+*Password Rotations and Sharing*
+
+Rotate secrets and populate the new secrets store.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apassword-rotations)
+
+*Addresses Theme:*
+
+* [Security](./themes.md#security)
+
+
+## releng-for-mozilla-proposal
+*Develop Releng for Mozilla Proposal*
+
+Create a proposal to also help non-Gecko teams at Mozilla with their release pipelines.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Areleng-for-mozilla-proposal)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Security](./themes.md#security)
+* [Support user growth in Mozilla products](./themes.md#user-growth)
+
+
+## firefox-snap-default
+*Make Firefox Snap the default format on Ubuntu*
+
+Make Snap the default format on Ubuntu. This will make a Mozilla build the default, rather than a distribution rebuild. There may be contracts involved.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-snap-default)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Security](./themes.md#security)
+* [Support user growth in Mozilla products](./themes.md#user-growth)
+
+
+## automate-mergeduty
+*Fully automate mergeduty*
+
+Fully automate the rest of mergeduty.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-mergeduty)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## test-scheduling
+*Test Scheduling improvements*
+
+Use smarter scheduling algorithms to reduce the number of tasks we run in CI and give developers greater confidence in their try pushes.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atest-scheduling)
+
+*Addresses Themes:*
+
+* [Support cost reduction](./themes.md#cost-reduction)
+* [Workflow](./themes.md#workflow)
 
 
 ## task-efficiencies
@@ -142,18 +328,6 @@ Reduce test frequencies, wasted time in tasks, and idle time in our CI infrastru
 * [Support cost reduction](./themes.md#cost-reduction)
 
 
-## activedata-maintenance
-*ActiveData Maintenance*
-
-Keep ActiveData running, until we find alternate solutions.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aactivedata-maintenance)
-
-*Addresses Theme:*
-
-* [Project Maintenance](./themes.md#maintenance)
-
-
 ## right-size-instances
 *Right-size cloud instances*
 
@@ -166,31 +340,6 @@ Create system to identify tasks running on oversized instances by collecting res
 * [Support cost reduction](./themes.md#cost-reduction)
 
 
-## balrog-metadata
-*Balrog Metadata Submission*
-
-Rework the Balrog admin interface to optimize how update metadata about individual locales is submitted, to increase reliability and efficiency.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Abalrog-metadata)
-
-*Addresses Themes:*
-
-* [Project Maintenance](./themes.md#maintenance)
-* [Team Operations](./themes.md#operations)
-
-
-## push-health-ux-rework
-*Push Health UX Rework*
-
-Give developers a simple view of what failures seen in CI need their attention.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apush-health-ux-rework)
-
-*Addresses Theme:*
-
-* [Project Maintenance](./themes.md#maintenance)
-
-
 ## treeherder-sheriff-requests
 *Specific bug fixes and feature requests for sheriffs*
 
@@ -200,19 +349,7 @@ Improving workflows for sheriffs make them more efficient and accurate. It also 
 
 *Addresses Theme:*
 
-* [Project Maintenance](./themes.md#maintenance)
-
-
-## python-3-migration
-*Finish Python 3 migration*
-
-Python 2 has been EOLed since the end of 2019. Pip will drop support for Python 2.7 in Jan 2021.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apython-3-migration)
-
-*Addresses Theme:*
-
-* [Project Maintenance](./themes.md#maintenance)
+* [Workflow](./themes.md#workflow)
 
 
 ## push-health-mozci
@@ -224,7 +361,7 @@ Improve Push Health regression detection accuracy by integrating MozCI
 
 *Addresses Theme:*
 
-* [Project Maintenance](./themes.md#maintenance)
+* [Workflow](./themes.md#workflow)
 
 
 ## test-distribution-optimization
@@ -237,19 +374,7 @@ Reduce overhead related to getting test files onto the test workers; stop schedu
 *Addresses Themes:*
 
 * [Support cost reduction](./themes.md#cost-reduction)
-* [Project Maintenance](./themes.md#maintenance)
-
-
-## developer-productivity
-*Developer Productivity*
-
-Improve developer productivity by addressing bugs developers file/mention and being proactive on workflows
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Adeveloper-productivity)
-
-*Addresses Theme:*
-
-* [Project Maintenance](./themes.md#maintenance)
+* [Workflow](./themes.md#workflow)
 
 
 ## archive-cleanup
