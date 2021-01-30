@@ -25,6 +25,8 @@ The following are the current initiatives:
 * [Develop Releng for Mozilla Proposal](#releng-for-mozilla-proposal)
 * [Make Firefox Snap the default format on Ubuntu](#firefox-snap-default)
 * [Fully automate mergeduty](#automate-mergeduty)
+* [Binary Transparency](#binary-transparency)
+* [Standardize Python Dependency Pinning in Gecko](#standardize-gecko-python)
 * [Test Scheduling improvements](#test-scheduling)
 * [Reduce wasted compute and idle time in our CI infrastructure](#task-efficiencies)
 * [Right-size cloud instances](#right-size-instances)
@@ -300,6 +302,31 @@ Fully automate the rest of mergeduty.
 
 *Addresses Theme:*
 
+* [Workflow](./themes.md#workflow)
+
+
+## binary-transparency
+*Binary Transparency*
+
+Implement Binary Transparency for Firefox updates
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Abinary-transparency)
+
+*Addresses Theme:*
+
+* [Security](./themes.md#security)
+
+
+## standardize-gecko-python
+*Standardize Python Dependency Pinning in Gecko*
+
+Work with the Build team to standardize how we pin and install dependencies across Gecko, including developer virtualenvs, automated builds, and automated tests.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Astandardize-gecko-python)
+
+*Addresses Themes:*
+
+* [Security](./themes.md#security)
 * [Workflow](./themes.md#workflow)
 
 

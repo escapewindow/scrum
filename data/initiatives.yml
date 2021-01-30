@@ -149,6 +149,27 @@ automate-mergeduty:
   description: >-
     Fully automate the rest of mergeduty.
 
+binary-transparency:
+  title: Binary Transparency
+  themes: [security]
+  description: >-
+    Implement Binary Transparency for Firefox updates
+
+standardize-gecko-python:
+  title: Standardize Python Dependency Pinning in Gecko
+  themes: [security, workflow]
+  description: >-
+    Work with the Build team to standardize how we pin and install dependencies
+    across Gecko, including developer virtualenvs, automated builds, and
+    automated tests.
+
+mozilla-china-fenix:
+  title: Support Mozilla China Fenix
+  themes: [security, workflow]
+  description: >-
+    Automate a Mozilla China variant of Fenix in the official Fenix repo,
+    at the same cadence as other Fenix releases.
+
 
 test-scheduling:
   title: Test Scheduling improvements

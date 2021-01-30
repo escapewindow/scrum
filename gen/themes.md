@@ -62,6 +62,8 @@ Improve our operational security, including
 * [Password Rotations and Sharing](./initiatives.md#password-rotations)
 * [Develop Releng for Mozilla Proposal](./initiatives.md#releng-for-mozilla-proposal)
 * [Make Firefox Snap the default format on Ubuntu](./initiatives.md#firefox-snap-default)
+* [Binary Transparency](./initiatives.md#binary-transparency)
+* [Standardize Python Dependency Pinning in Gecko](./initiatives.md#standardize-gecko-python)
 
 
 ## user-growth
@@ -103,6 +105,7 @@ Improvements in Mozilla CI and release pipelines and tooling workflow.
 * [Develop Releng for Mozilla Proposal](./initiatives.md#releng-for-mozilla-proposal)
 * [Make Firefox Snap the default format on Ubuntu](./initiatives.md#firefox-snap-default)
 * [Fully automate mergeduty](./initiatives.md#automate-mergeduty)
+* [Standardize Python Dependency Pinning in Gecko](./initiatives.md#standardize-gecko-python)
 * [Test Scheduling improvements](./initiatives.md#test-scheduling)
 * [Specific bug fixes and feature requests for sheriffs](./initiatives.md#treeherder-sheriff-requests)
 * [Push Health MozCI integration](./initiatives.md#push-health-mozci)
