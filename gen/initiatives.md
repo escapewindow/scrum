@@ -11,46 +11,48 @@ The following are the current initiatives:
 * [Work with the Addons team to formalize the Addons Pipeline](#formalize-addons-pipeline)
 * [Automate Mac Signer Maintenance](#automate-mac-signer-maintenance)
 * [Apple Silicon Support](#apple-silicon-support)
-* [Modernizing OS/Hardware for CI tests](#modernizing-test-platforms)
 * [Push Health UX Rework](#push-health-ux-rework)
-* [Drive desktop Firefox Nightly automation through shipit](#firefox-nightly-shipit)
-* [Speed up update verify](#speed-up-update-verify)
-* [Developer Productivity](#developer-productivity)
-* [Productionize or EOL ActiveData](#activedata-eol)
-* [Treeherder: Improve login experience](#treeherder-login-experience)
-* [Treeherder: Maintenance/Backlog](#treeherder-maintenance)
-* [Finish Python 3 migration](#python-3-migration)
-* [Automate QA's Firefox Update Tests](#automate-firefox-update-tests)
 * [Password Rotations and Sharing](#password-rotations)
 * [Develop Releng for Mozilla Proposal](#releng-for-mozilla-proposal)
-* [Make Firefox Snap the default format on Ubuntu](#firefox-snap-default)
-* [Fully automate mergeduty](#automate-mergeduty)
-* [Binary Transparency](#binary-transparency)
 * [Standardize Python Dependency Pinning in Gecko](#standardize-gecko-python)
 * [Support Mozilla China Fenix](#mozilla-china-fenix)
 * [Support tests in external contributor PRs in Android-Components](#android-components-contributor-prs)
-* [Improve mobile release and CI task robustness](#mobile-task-robustness)
-* [Support Focus releases through Shipit](#focus-shipit)
-* [Migrate Windows 10 from AWS to Azure](#migrate-windows-10-to-azure)
+* [Migrate Windows 10 from AWS to Azure](#migrate-windows-10-aws-to-azure)
 * [Migrate from MDC2](#migrate-from-mdc2)
 * [Bitbar contract renewal](#bitbar-contract-renewal)
-* [Add support for Linux ARM64 in the CI](#linux-arm64-ci)
 * [Treeherder - move to CloudOps dockerflow](#treeherder-cloudops)
-* [TreeHerder Failure Classification](#treeherder-failure-classification)
 * [Treeherder - sheriff improvement fixes/requests](#treeherder-sheriff-requests)
-* [Treeherder - Identify bad machines](#treeherder-bad-machines)
 * [Intermittents: quickly move repeatable failures to a quarantine job](#quarantine-intermittents)
+* [EOL Firefox Lite](#firefox-lite-eol)
+* [Automate Fenix Betas](#automate-fenix-betas)
+* [Modernizing OS/Hardware for CI tests](#modernizing-test-platforms)
+* [Developer Productivity](#developer-productivity)
+* [Treeherder: Improve login experience](#treeherder-login-experience)
+* [Finish Python 3 migration](#python-3-migration)
+* [Automate QA's Firefox Update Tests](#automate-firefox-update-tests)
+* [Make Firefox Snap the default format on Ubuntu](#firefox-snap-default)
+* [Improve mobile release and CI task robustness](#mobile-task-robustness)
+* [Support Focus releases through Shipit](#focus-shipit)
+* [Add support for Linux ARM64 in the CI](#linux-arm64-ci)
+* [TreeHerder Failure Classification](#treeherder-failure-classification)
+* [Treeherder - Identify bad machines](#treeherder-bad-machines)
 * [Work with l10n team to deprecate l10n repacks](#deprecate-l10n-repacks)
-* [Reduce wasted compute and idle time in our CI infrastructure](#task-efficiencies)
 * [archive.mozilla.org cleanup](#archive-cleanup)
-* [Right-size cloud instances](#right-size-instances)
-* [Test Scheduling improvements](#test-scheduling)
 * [reduce taskgraph learning curve](#taskgraph-learning-curve)
 * [Valuing Bug Sources](#valuing-bug-sources)
-* [EOL Firefox Lite](#firefox-lite-eol)
 * [Team view of riskiness of pushes](#push-riskiness)
+* [Drive desktop Firefox Nightly automation through shipit](#firefox-nightly-shipit)
+* [Speed up update verify](#speed-up-update-verify)
+* [Productionize or EOL ActiveData](#activedata-eol)
+* [Treeherder: Maintenance/Backlog](#treeherder-maintenance)
+* [Fully automate mergeduty](#automate-mergeduty)
+* [Binary Transparency](#binary-transparency)
+* [Upload Fenix to places where Fennec used to live](#upload-fenix-to-fennec-locations)
+* [Migrate win10 tests from Datacenter to Azure](#migrate-windows-10-datacenter-to-azure)
+* [Reduce wasted compute and idle time in our CI infrastructure](#task-efficiencies)
+* [Right-size cloud instances](#right-size-instances)
+* [Test Scheduling improvements](#test-scheduling)
 * [Implement a dark mode theme in Treeherder](#treeherder-dark-mode)
-* [Automate Fenix Betas](#automate-fenix-betas)
 
 To update this information, edit `data/initiatives.yml` and run `generate.py`.
 
@@ -144,19 +146,6 @@ Determine what is needed to support Apple Silicon build signing and testing, and
 * [Workflow](./themes.md#workflow)
 
 
-## modernizing-test-platforms
-*Modernizing OS/Hardware for CI tests*
-
-Keep Firefox CI OS+hardware/cloud environments relevant and investigate ways to reduce pain points.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amodernizing-test-platforms)
-
-*Addresses Themes:*
-
-* [Team Operations](./themes.md#operations)
-* [Workflow](./themes.md#workflow)
-
-
 ## push-health-ux-rework
 *Push Health UX Rework*
 
@@ -166,105 +155,6 @@ Give developers a simple view of what failures seen in CI need their attention.
 
 *Addresses Theme:*
 
-* [Workflow](./themes.md#workflow)
-
-
-## firefox-nightly-shipit
-*Drive desktop Firefox Nightly automation through shipit*
-
-Unify nightly and release automation in Gecko.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-nightly-shipit)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## speed-up-update-verify
-*Speed up update verify*
-
-Speed up update verify.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aspeed-up-update-verify)
-
-*Addresses Themes:*
-
-* [Support cost reduction](./themes.md#cost-reduction)
-* [Workflow](./themes.md#workflow)
-
-
-## developer-productivity
-*Developer Productivity*
-
-Improve developer productivity by addressing bugs developers file/mention and being proactive on workflows
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Adeveloper-productivity)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## activedata-eol
-*Productionize or EOL ActiveData*
-
-Productionize or EOL ActiveData.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aactivedata-eol)
-
-*Addresses Theme:*
-
-* [Team Operations](./themes.md#operations)
-
-
-## treeherder-login-experience
-*Treeherder: Improve login experience*
-
-Minimize papercuts in Treeherder by increasing login TTL.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-login-experience)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## treeherder-maintenance
-*Treeherder: Maintenance/Backlog*
-
-Treeherder maintenance and backlog
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-maintenance)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## python-3-migration
-*Finish Python 3 migration*
-
-Python 2 has been EOLed since the end of 2019. Pip dropped support for Python 2.7 in Jan 2021.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apython-3-migration)
-
-*Addresses Themes:*
-
-* [Team Operations](./themes.md#operations)
-* [Security](./themes.md#security)
-
-
-## automate-firefox-update-tests
-*Automate QA's Firefox Update Tests*
-
-QA runs update tests against a matrix of Firefox versions. They want us to run these tests in automation.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-firefox-update-tests)
-
-*Addresses Themes:*
-
-* [Support cost reduction](./themes.md#cost-reduction)
 * [Workflow](./themes.md#workflow)
 
 
@@ -292,44 +182,6 @@ Create a proposal to also help non-Gecko teams at Mozilla with their release pip
 * [Workflow](./themes.md#workflow)
 * [Security](./themes.md#security)
 * [Support user growth in Mozilla products](./themes.md#user-growth)
-
-
-## firefox-snap-default
-*Make Firefox Snap the default format on Ubuntu*
-
-Make Snap the default format on Ubuntu. This will make a Mozilla build the default, rather than a distribution rebuild. There may be contracts involved.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-snap-default)
-
-*Addresses Themes:*
-
-* [Workflow](./themes.md#workflow)
-* [Security](./themes.md#security)
-* [Support user growth in Mozilla products](./themes.md#user-growth)
-
-
-## automate-mergeduty
-*Fully automate mergeduty*
-
-Fully automate the rest of mergeduty.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-mergeduty)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## binary-transparency
-*Binary Transparency*
-
-Implement Binary Transparency for Firefox updates
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Abinary-transparency)
-
-*Addresses Theme:*
-
-* [Security](./themes.md#security)
 
 
 ## standardize-gecko-python
@@ -371,38 +223,12 @@ Potentially install and support Bors for automated tests in PRs without exposing
 * [Workflow](./themes.md#workflow)
 
 
-## mobile-task-robustness
-*Improve mobile release and CI task robustness*
-
-Intermittent failures are forcing mobile developers to rerun 100+ tasks instead of automatically rerunning; let's improve that.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amobile-task-robustness)
-
-*Addresses Themes:*
-
-* [Workflow](./themes.md#workflow)
-* [Team Operations](./themes.md#operations)
-
-
-## focus-shipit
-*Support Focus releases through Shipit*
-
-Let's unify our mobile pipelines by supporting Focus in shipit.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afocus-shipit)
-
-*Addresses Themes:*
-
-* [Workflow](./themes.md#workflow)
-* [Security](./themes.md#security)
-
-
-## migrate-windows-10-to-azure
+## migrate-windows-10-aws-to-azure
 *Migrate Windows 10 from AWS to Azure*
 
 Migrate our Windows 10 tasks from AWS to Azure.
 
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amigrate-windows-10-to-azure)
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amigrate-windows-10-aws-to-azure)
 
 *Addresses Themes:*
 
@@ -436,12 +262,12 @@ Contract expires mid-April. We need a solution for android/fenix/laptop perf tes
 * [Support cost reduction](./themes.md#cost-reduction)
 
 
-## linux-arm64-ci
-*Add support for Linux ARM64 in the CI*
+## treeherder-cloudops
+*Treeherder - move to CloudOps dockerflow*
 
-Better ARM64 automated testing overall. M1 automatic testing will be hard at scale. Testing more on Linux will help identifying CPU specific issue for both Linux and Apple Silicon since they are very similar. Would help for mobile too since most of Android is ARM64.
+Mitigate risk of only having a small handful of people who could respond to emergencies. Also brings consistency across rest of the RelEng major systems that are already in CloudOps's hands.
 
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Alinux-arm64-ci)
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-cloudops)
 
 *Addresses Themes:*
 
@@ -449,12 +275,164 @@ Better ARM64 automated testing overall. M1 automatic testing will be hard at sca
 * [Workflow](./themes.md#workflow)
 
 
-## treeherder-cloudops
-*Treeherder - move to CloudOps dockerflow*
+## treeherder-sheriff-requests
+*Treeherder - sheriff improvement fixes/requests*
 
-Mitigate risk of only having a small handful of people who could respond to emergencies. Also brings consistency across rest of the RelEng major systems that are already in CloudOps's hands.
+There are fixes they've been asking for for many years that add up to lost productivity
 
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-cloudops)
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-sheriff-requests)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## quarantine-intermittents
+*Intermittents: quickly move repeatable failures to a quarantine job*
+
+Ability to run tests in quarantine as part of new config process, desire to reduce load on code sheriffs, existing processes depend on activedata which isn't well supported anymore
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aquarantine-intermittents)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## firefox-lite-eol
+*EOL Firefox Lite*
+
+Firefox Lite is no longer supported, but we want to create a few more releases to notify users and send them to other products. We no longer have a team creating these releases; let's help the mobile team get these releases signed and shipped.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-lite-eol)
+
+*Addresses Theme:*
+
+* [Team Operations](./themes.md#operations)
+
+
+## automate-fenix-betas
+*Automate Fenix Betas*
+
+Fenix beta timing requires RelMan to be around in the north american evening to trigger them. We should be able to automate this relatively easily to make their lives better
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-fenix-betas)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## modernizing-test-platforms
+*Modernizing OS/Hardware for CI tests*
+
+Keep Firefox CI OS+hardware/cloud environments relevant and investigate ways to reduce pain points.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amodernizing-test-platforms)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Workflow](./themes.md#workflow)
+
+
+## developer-productivity
+*Developer Productivity*
+
+Improve developer productivity by addressing bugs developers file/mention and being proactive on workflows
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Adeveloper-productivity)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## treeherder-login-experience
+*Treeherder: Improve login experience*
+
+Minimize papercuts in Treeherder by increasing login TTL.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-login-experience)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## python-3-migration
+*Finish Python 3 migration*
+
+Python 2 has been EOLed since the end of 2019. Pip dropped support for Python 2.7 in Jan 2021.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apython-3-migration)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Security](./themes.md#security)
+
+
+## automate-firefox-update-tests
+*Automate QA's Firefox Update Tests*
+
+QA runs update tests against a matrix of Firefox versions. They want us to run these tests in automation.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-firefox-update-tests)
+
+*Addresses Themes:*
+
+* [Support cost reduction](./themes.md#cost-reduction)
+* [Workflow](./themes.md#workflow)
+
+
+## firefox-snap-default
+*Make Firefox Snap the default format on Ubuntu*
+
+Make Snap the default format on Ubuntu. This will make a Mozilla build the default, rather than a distribution rebuild. There may be contracts involved.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-snap-default)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Security](./themes.md#security)
+* [Support user growth in Mozilla products](./themes.md#user-growth)
+
+
+## mobile-task-robustness
+*Improve mobile release and CI task robustness*
+
+Intermittent failures are forcing mobile developers to rerun 100+ tasks instead of automatically rerunning; let's improve that.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amobile-task-robustness)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Team Operations](./themes.md#operations)
+
+
+## focus-shipit
+*Support Focus releases through Shipit*
+
+Let's unify our mobile pipelines by supporting Focus in shipit.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afocus-shipit)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Security](./themes.md#security)
+
+
+## linux-arm64-ci
+*Add support for Linux ARM64 in the CI*
+
+Better ARM64 automated testing overall. M1 automatic testing will be hard at scale. Testing more on Linux will help identifying CPU specific issue for both Linux and Apple Silicon since they are very similar. Would help for mobile too since most of Android is ARM64.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Alinux-arm64-ci)
 
 *Addresses Themes:*
 
@@ -474,37 +452,12 @@ This is a common request from sheriffs. Not having this is slowing their work an
 * [Workflow](./themes.md#workflow)
 
 
-## treeherder-sheriff-requests
-*Treeherder - sheriff improvement fixes/requests*
-
-There are fixes they've been asking for for many years that add up to lost productivity
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-sheriff-requests)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
 ## treeherder-bad-machines
 *Treeherder - Identify bad machines*
 
 Effort to reduce sheriff load, spending 2h/week finding patterns and investigating
 
 [*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-bad-machines)
-
-*Addresses Themes:*
-
-* [Workflow](./themes.md#workflow)
-* [Support cost reduction](./themes.md#cost-reduction)
-
-
-## quarantine-intermittents
-*Intermittents: quickly move repeatable failures to a quarantine job*
-
-Ability to run tests in quarantine as part of new config process, desire to reduce load on code sheriffs, existing processes depend on activedata which isn't well supported anymore
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aquarantine-intermittents)
 
 *Addresses Themes:*
 
@@ -526,24 +479,158 @@ There is momentum from the l10n team on this. This would exponentially reduce ta
 * [Support user growth in Mozilla products](./themes.md#user-growth)
 
 
-## task-efficiencies
-*Reduce wasted compute and idle time in our CI infrastructure*
-
-Reduce test frequencies, wasted time in tasks, and idle time in our CI infrastructure.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atask-efficiencies)
-
-*Addresses Theme:*
-
-* [Support cost reduction](./themes.md#cost-reduction)
-
-
 ## archive-cleanup
 *archive.mozilla.org cleanup*
 
 Get rid of unnecessary files on archive.mozilla.org and enact new retention policies
 
 [*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aarchive-cleanup)
+
+*Addresses Theme:*
+
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## taskgraph-learning-curve
+*reduce taskgraph learning curve*
+
+Improving the tool reduces the learning curve for Releng, saves us future effort, helps with better automation and adds more self-serving capabilities for other teams that are using it.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Ataskgraph-learning-curve)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## valuing-bug-sources
+*Valuing Bug Sources*
+
+We pay a significant amount to various sources to file new bugs. By creating a tool to show relative values of each bug filing source, we can determine whether each is worth the cost.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Avaluing-bug-sources)
+
+*Addresses Theme:*
+
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## push-riskiness
+*Team view of riskiness of pushes*
+
+The idea is to move some of the knowledge and responsibility that is currently RelMan’s and spread it across engineering teams. Distributed responsibility should make it easier to control quality, since each team will take ownership of quality for the components they own rather than relying on a small "third-party" team to oversee everything.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apush-riskiness)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## firefox-nightly-shipit
+*Drive desktop Firefox Nightly automation through shipit*
+
+Unify nightly and release automation in Gecko.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-nightly-shipit)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## speed-up-update-verify
+*Speed up update verify*
+
+Speed up update verify.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aspeed-up-update-verify)
+
+*Addresses Themes:*
+
+* [Support cost reduction](./themes.md#cost-reduction)
+* [Workflow](./themes.md#workflow)
+
+
+## activedata-eol
+*Productionize or EOL ActiveData*
+
+Productionize or EOL ActiveData.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aactivedata-eol)
+
+*Addresses Theme:*
+
+* [Team Operations](./themes.md#operations)
+
+
+## treeherder-maintenance
+*Treeherder: Maintenance/Backlog*
+
+Treeherder maintenance and backlog
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-maintenance)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## automate-mergeduty
+*Fully automate mergeduty*
+
+Fully automate the rest of mergeduty.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-mergeduty)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## binary-transparency
+*Binary Transparency*
+
+Implement Binary Transparency for Firefox updates
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Abinary-transparency)
+
+*Addresses Theme:*
+
+* [Security](./themes.md#security)
+
+
+## upload-fenix-to-fennec-locations
+*Upload Fenix to places where Fennec used to live*
+
+Backup Fenix artifacts in S3 for future + update Buildhub for automation downstream consumption. Not urgent but nice-to-have. request from the mobile team too
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aupload-fenix-to-fennec-locations)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## migrate-windows-10-datacenter-to-azure
+*Migrate win10 tests from Datacenter to Azure*
+
+datacenter machines are past warranty and need to be replaced in 2022, work in 2021 to capacity plan and evaluate new machines
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amigrate-windows-10-datacenter-to-azure)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## task-efficiencies
+*Reduce wasted compute and idle time in our CI infrastructure*
+
+Reduce test frequencies, wasted time in tasks, and idle time in our CI infrastructure.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atask-efficiencies)
 
 *Addresses Theme:*
 
@@ -575,72 +662,12 @@ Use smarter scheduling algorithms to reduce the number of tasks we run in CI and
 * [Workflow](./themes.md#workflow)
 
 
-## taskgraph-learning-curve
-*reduce taskgraph learning curve*
-
-Improving the tool reduces the learning curve for Releng, saves us future effort, helps with better automation and adds more self-serving capabilities for other teams that are using it.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Ataskgraph-learning-curve)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## valuing-bug-sources
-*Valuing Bug Sources*
-
-We pay a significant amount to various sources to file new bugs. By creating a tool to show relative values of each bug filing source, we can determine whether each is worth the cost.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Avaluing-bug-sources)
-
-*Addresses Theme:*
-
-* [Support cost reduction](./themes.md#cost-reduction)
-
-
-## firefox-lite-eol
-*EOL Firefox Lite*
-
-Firefox Lite is no longer supported, but we want to create a few more releases to notify users and send them to other products. We no longer have a team creating these releases; let's help the mobile team get these releases signed and shipped.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-lite-eol)
-
-*Addresses Theme:*
-
-* [Team Operations](./themes.md#operations)
-
-
-## push-riskiness
-*Team view of riskiness of pushes*
-
-The idea is to move some of the knowledge and responsibility that is currently RelMan’s and spread it across engineering teams. Distributed responsibility should make it easier to control quality, since each team will take ownership of quality for the components they own rather than relying on a small "third-party" team to oversee everything.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apush-riskiness)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
 ## treeherder-dark-mode
 *Implement a dark mode theme in Treeherder*
 
 Per camd, this has been a popular feature request from sheriffs for a while and he had taken a stab at it in the past but found it was too much work with competing, higher priorities (one of the challenges being the amount of custom CSS we have and keeping the contrast between various colors accessible).
 
 [*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-dark-mode)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## automate-fenix-betas
-*Automate Fenix Betas*
-
-Fenix beta timing requires RelMan to be around in the north american evening to trigger them. We should be able to automate this relatively easily to make their lives better
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-fenix-betas)
 
 *Addresses Theme:*
 
