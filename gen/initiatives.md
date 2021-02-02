@@ -27,15 +27,30 @@ The following are the current initiatives:
 * [Fully automate mergeduty](#automate-mergeduty)
 * [Binary Transparency](#binary-transparency)
 * [Standardize Python Dependency Pinning in Gecko](#standardize-gecko-python)
-* [Test Scheduling improvements](#test-scheduling)
+* [Support Mozilla China Fenix](#mozilla-china-fenix)
+* [Support tests in external contributor PRs in Android-Components](#android-components-contributor-prs)
+* [Improve mobile release and CI task robustness](#mobile-task-robustness)
+* [Support Focus releases through Shipit](#focus-shipit)
+* [Migrate Windows 10 from AWS to Azure](#migrate-windows-10-to-azure)
+* [Migrate from MDC2](#migrate-from-mdc2)
+* [Bitbar contract renewal](#bitbar-contract-renewal)
+* [Add support for Linux ARM64 in the CI](#linux-arm64-ci)
+* [Treeherder - move to CloudOps dockerflow](#treeherder-cloudops)
+* [TreeHerder Failure Classification](#treeherder-failure-classification)
+* [Treeherder - sheriff improvement fixes/requests](#treeherder-sheriff-requests)
+* [Treeherder - Identify bad machines](#treeherder-bad-machines)
+* [Intermittents: quickly move repeatable failures to a quarantine job](#quarantine-intermittents)
+* [Work with l10n team to deprecate l10n repacks](#deprecate-l10n-repacks)
 * [Reduce wasted compute and idle time in our CI infrastructure](#task-efficiencies)
-* [Right-size cloud instances](#right-size-instances)
-* [Specific bug fixes and feature requests for sheriffs](#treeherder-sheriff-requests)
-* [Push Health MozCI integration](#push-health-mozci)
-* [Test distribution and scheduling optimizations](#test-distribution-optimization)
 * [archive.mozilla.org cleanup](#archive-cleanup)
-* [Improve iOS build, release, and CI pipeline](#ios-needs)
-* [Support MozillaVPN Releases](#mozillavpn)
+* [Right-size cloud instances](#right-size-instances)
+* [Test Scheduling improvements](#test-scheduling)
+* [reduce taskgraph learning curve](#taskgraph-learning-curve)
+* [Valuing Bug Sources](#valuing-bug-sources)
+* [EOL Firefox Lite](#firefox-lite-eol)
+* [Team view of riskiness of pushes](#push-riskiness)
+* [Implement a dark mode theme in Treeherder](#treeherder-dark-mode)
+* [Automate Fenix Betas](#automate-fenix-betas)
 
 To update this information, edit `data/initiatives.yml` and run `generate.py`.
 
@@ -330,17 +345,185 @@ Work with the Build team to standardize how we pin and install dependencies acro
 * [Workflow](./themes.md#workflow)
 
 
-## test-scheduling
-*Test Scheduling improvements*
+## mozilla-china-fenix
+*Support Mozilla China Fenix*
 
-Use smarter scheduling algorithms to reduce the number of tasks we run in CI and give developers greater confidence in their try pushes.
+Automate a Mozilla China variant of Fenix in the official Fenix repo, at the same cadence as other Fenix releases.
 
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atest-scheduling)
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amozilla-china-fenix)
+
+*Addresses Themes:*
+
+* [Security](./themes.md#security)
+* [Workflow](./themes.md#workflow)
+
+
+## android-components-contributor-prs
+*Support tests in external contributor PRs in Android-Components*
+
+Potentially install and support Bors for automated tests in PRs without exposing secrets to the internet.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aandroid-components-contributor-prs)
+
+*Addresses Themes:*
+
+* [Security](./themes.md#security)
+* [Workflow](./themes.md#workflow)
+
+
+## mobile-task-robustness
+*Improve mobile release and CI task robustness*
+
+Intermittent failures are forcing mobile developers to rerun 100+ tasks instead of automatically rerunning; let's improve that.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amobile-task-robustness)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Team Operations](./themes.md#operations)
+
+
+## focus-shipit
+*Support Focus releases through Shipit*
+
+Let's unify our mobile pipelines by supporting Focus in shipit.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afocus-shipit)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Security](./themes.md#security)
+
+
+## migrate-windows-10-to-azure
+*Migrate Windows 10 from AWS to Azure*
+
+Migrate our Windows 10 tasks from AWS to Azure.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amigrate-windows-10-to-azure)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## migrate-from-mdc2
+*Migrate from MDC2*
+
+Support the migration out of MDC2.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amigrate-from-mdc2)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## bitbar-contract-renewal
+*Bitbar contract renewal*
+
+Contract expires mid-April. We need a solution for android/fenix/laptop perf testing and to plan capacity in a budget-friendly way. With some minimum efforts, we could save ~$100K
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Abitbar-contract-renewal)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## linux-arm64-ci
+*Add support for Linux ARM64 in the CI*
+
+Better ARM64 automated testing overall. M1 automatic testing will be hard at scale. Testing more on Linux will help identifying CPU specific issue for both Linux and Apple Silicon since they are very similar. Would help for mobile too since most of Android is ARM64.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Alinux-arm64-ci)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Workflow](./themes.md#workflow)
+
+
+## treeherder-cloudops
+*Treeherder - move to CloudOps dockerflow*
+
+Mitigate risk of only having a small handful of people who could respond to emergencies. Also brings consistency across rest of the RelEng major systems that are already in CloudOps's hands.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-cloudops)
+
+*Addresses Themes:*
+
+* [Team Operations](./themes.md#operations)
+* [Workflow](./themes.md#workflow)
+
+
+## treeherder-failure-classification
+*TreeHerder Failure Classification*
+
+This is a common request from sheriffs. Not having this is slowing their work and decreasing accuracy.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-failure-classification)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## treeherder-sheriff-requests
+*Treeherder - sheriff improvement fixes/requests*
+
+There are fixes they've been asking for for many years that add up to lost productivity
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-sheriff-requests)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## treeherder-bad-machines
+*Treeherder - Identify bad machines*
+
+Effort to reduce sheriff load, spending 2h/week finding patterns and investigating
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-bad-machines)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## quarantine-intermittents
+*Intermittents: quickly move repeatable failures to a quarantine job*
+
+Ability to run tests in quarantine as part of new config process, desire to reduce load on code sheriffs, existing processes depend on activedata which isn't well supported anymore
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aquarantine-intermittents)
+
+*Addresses Themes:*
+
+* [Workflow](./themes.md#workflow)
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## deprecate-l10n-repacks
+*Work with l10n team to deprecate l10n repacks*
+
+There is momentum from the l10n team on this. This would exponentially reduce taskgraph complexity and release end-to-end times. We would reduce the number of shipping desktop binaries exponentially. Repacks are also significantly less discoverable or configurable on shared/multilingual users’ machines than langpacks could be.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Adeprecate-l10n-repacks)
 
 *Addresses Themes:*
 
 * [Support cost reduction](./themes.md#cost-reduction)
 * [Workflow](./themes.md#workflow)
+* [Support user growth in Mozilla products](./themes.md#user-growth)
 
 
 ## task-efficiencies
@@ -349,6 +532,18 @@ Use smarter scheduling algorithms to reduce the number of tasks we run in CI and
 Reduce test frequencies, wasted time in tasks, and idle time in our CI infrastructure.
 
 [*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atask-efficiencies)
+
+*Addresses Theme:*
+
+* [Support cost reduction](./themes.md#cost-reduction)
+
+
+## archive-cleanup
+*archive.mozilla.org cleanup*
+
+Get rid of unnecessary files on archive.mozilla.org and enact new retention policies
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aarchive-cleanup)
 
 *Addresses Theme:*
 
@@ -367,36 +562,12 @@ Create system to identify tasks running on oversized instances by collecting res
 * [Support cost reduction](./themes.md#cost-reduction)
 
 
-## treeherder-sheriff-requests
-*Specific bug fixes and feature requests for sheriffs*
+## test-scheduling
+*Test Scheduling improvements*
 
-Improving workflows for sheriffs make them more efficient and accurate. It also makes their lives easier.
+Use smarter scheduling algorithms to reduce the number of tasks we run in CI and give developers greater confidence in their try pushes.
 
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-sheriff-requests)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## push-health-mozci
-*Push Health MozCI integration*
-
-Improve Push Health regression detection accuracy by integrating MozCI
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apush-health-mozci)
-
-*Addresses Theme:*
-
-* [Workflow](./themes.md#workflow)
-
-
-## test-distribution-optimization
-*Test distribution and scheduling optimizations*
-
-Reduce overhead related to getting test files onto the test workers; stop scheduling builds for test-only changes.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atest-distribution-optimization)
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atest-scheduling)
 
 *Addresses Themes:*
 
@@ -404,38 +575,74 @@ Reduce overhead related to getting test files onto the test workers; stop schedu
 * [Workflow](./themes.md#workflow)
 
 
-## archive-cleanup
-*archive.mozilla.org cleanup*
+## taskgraph-learning-curve
+*reduce taskgraph learning curve*
 
-Get rid of unnecessary files on archive.mozilla.org and enact new retention policies
+Improving the tool reduces the learning curve for Releng, saves us future effort, helps with better automation and adds more self-serving capabilities for other teams that are using it.
 
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aarchive-cleanup)
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Ataskgraph-learning-curve)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## valuing-bug-sources
+*Valuing Bug Sources*
+
+We pay a significant amount to various sources to file new bugs. By creating a tool to show relative values of each bug filing source, we can determine whether each is worth the cost.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Avaluing-bug-sources)
 
 *Addresses Theme:*
 
 * [Support cost reduction](./themes.md#cost-reduction)
 
 
-## ios-needs
-*Improve iOS build, release, and CI pipeline*
+## firefox-lite-eol
+*EOL Firefox Lite*
 
-iOS builds & releases are more important than ever, and ensuring developers are unblocked and that releases can ship on time is very important.
+Firefox Lite is no longer supported, but we want to create a few more releases to notify users and send them to other products. We no longer have a team creating these releases; let's help the mobile team get these releases signed and shipped.
 
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aios-needs)
-
-*Addresses Theme:*
-
-* [Support user growth in Mozilla products](./themes.md#user-growth)
-
-
-## mozillavpn
-*Support MozillaVPN Releases*
-
-MozillaVPN is a new product that is quickly gaining traction. We need make sure that they can ship, and eventually, have proper CI/Release automation.
-
-[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Amozillavpn)
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Afirefox-lite-eol)
 
 *Addresses Theme:*
 
-* [Support user growth in Mozilla products](./themes.md#user-growth)
+* [Team Operations](./themes.md#operations)
+
+
+## push-riskiness
+*Team view of riskiness of pushes*
+
+The idea is to move some of the knowledge and responsibility that is currently RelMan’s and spread it across engineering teams. Distributed responsibility should make it easier to control quality, since each team will take ownership of quality for the components they own rather than relying on a small "third-party" team to oversee everything.
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Apush-riskiness)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## treeherder-dark-mode
+*Implement a dark mode theme in Treeherder*
+
+Per camd, this has been a popular feature request from sheriffs for a while and he had taken a stab at it in the past but found it was too much work with competing, higher priorities (one of the challenges being the amount of custom CSS we have and keeping the contrast between various colors accessible).
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Atreeherder-dark-mode)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
+
+
+## automate-fenix-betas
+*Automate Fenix Betas*
+
+Fenix beta timing requires RelMan to be around in the north american evening to trigger them. We should be able to automate this relatively easily to make their lives better
+
+[*Associated Epics*](https://github.com/taskcluster/scrum/issues?q=is%3Aissue+is%3Aopen+label%3Ainitiative%3Aautomate-fenix-betas)
+
+*Addresses Theme:*
+
+* [Workflow](./themes.md#workflow)
 
