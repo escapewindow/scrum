@@ -44,7 +44,7 @@ Improve our operational efficiency, including
 
 *Associated Initiatives:*
 
-* [Keep the Lights On](./initiatives.md#releng-ktlo)
+* [Keep the Lights On](./initiatives.md#ktlo)
 * [Automate Mac Signer Maintenance](./initiatives.md#automate-mac-signer-maintenance)
 * [Migrate Windows 10 from AWS to Azure](./initiatives.md#migrate-windows-10-aws-to-azure)
 * [Migrate from MDC2](./initiatives.md#migrate-from-mdc2)
@@ -105,7 +105,7 @@ Improvements in Mozilla CI and release pipelines and tooling workflow.
 
 *Associated Initiatives:*
 
-* [Keep the Lights On](./initiatives.md#releng-ktlo)
+* [Keep the Lights On](./initiatives.md#ktlo)
 * [Integrate Geckoview and Android-Components in the Fenix pipeline on Shipit](./initiatives.md#geckoview-android-components-shipit)
 * [Implement Android v3 signatures and sign Fenix with them](./initiatives.md#fenix-v3-signatures)
 * [Automate shipping system addons through Balrog](./initiatives.md#system-addons-balrog)
