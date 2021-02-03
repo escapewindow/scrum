@@ -83,7 +83,7 @@ We are using [Jira](https://jira.mozilla.com/) to manage our agile process. Jira
 * sprints
 * burndown charts
 
-Any issues that are purely process-based (e.g. scrum documentation) should be filed in [the scrum repo](https://github.com/mozilla-releng/scrum). Epics are represented in Jira as [specially-tagged issues](https://jira.mozilla.com/browse/RELENG-79?jql=project%20%3D%20RELENG%20AND%20issuetype%20%3D%20Epic%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC). Since they are a process abstraction to link issues together, Epic issues should be filed in the scrum repo as well.
+Any issues that are purely process-based (e.g. scrum documentation) should be filed in [the scrum repo](https://github.com/mozilla-releng/scrum). Epics are represented in Jira as [specially-tagged issues](https://jira.mozilla.com/browse/RELENG-79?jql=project%20%3D%20RELENG%20AND%20issuetype%20%3D%20Epic%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC). If we provide a `label` that matches the scrum repo's initiative, those epics will show up in the appropriate initiative's search link.
 
 ## Roles
 We have three defined roles in our agile process:
