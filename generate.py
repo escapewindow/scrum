@@ -112,7 +112,7 @@ def write_initiatives():
                 '',
                 init['description'],
                 '',
-                f'[*Associated Epics*](https://jira.mozilla.com/browse/RELENG-4?jql=project%20%3D%20RELENG%20AND%20issuetype%20%3D%20Epic%20AND%20labels%20%3D%20{id})',
+                f'[*Associated Epics*](https://jira.mozilla.com/issues/?jql=project%20%3D%20RELENG%20AND%20issuetype%20%3D%20Epic%20AND%20labels%20%3D%20{id})',
                 '',
                 f'*Addresses {"Themes" if len(init["themes"]) != 1 else "Theme"}:*',
                 '',
