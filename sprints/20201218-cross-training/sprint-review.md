@@ -1,7 +1,13 @@
-# Sprint Review - {{SPRINT_TITLE}}, {{START_DATE}} - {{END_DATE}}
+# Sprint Review - Cross-Training, November 30, 2020 - December 18, 2020
 
-**Product Owner**: {{PRODUCT_OWNER}}  
-**Scrum Master**: {{SCRUM_MASTER_
+**Product Owner**:
+- mozillavpn: bhearsum
+- android-components on shipit: jlorenzo
+- apple silicon: jmaher
+- interruptduty: mtabara
+- treeherder sheriff: camd
+- push health: sclements
+**Scrum Master**: mtabara
 
 ## Goal
 
